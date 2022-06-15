@@ -19,6 +19,7 @@ services:
       volumes:
          - ./src/:/var/www/html/
          - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+         - ./src/uploads/:/var/www/html/uploads
 
    mysql:
       container_name: mysql
@@ -33,7 +34,6 @@ services:
       volumes:
          - ./init:/docker-entrypoint-initdb.d
          - db:/var/lib/mysql
-         - ./src/uploads/:/var/www/html/uploads
      
 volumes:
    db:

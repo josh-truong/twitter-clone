@@ -20,12 +20,13 @@ docker-compose up
 docker-compose down -v --remove-orphans
 ```
 
-#### Access Database
+#### Access Database Container
 ```
 docker exec -it mysql bash -l
+mysql -u root -ppasswd
 ```
 
-#### MySQL
+#### Access Php-Apache Container
 ```
-mysql -u root -ppasswd
+docker exec -it php-apache bash -l
 ```
