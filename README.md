@@ -36,3 +36,5 @@ docker exec -it php-apache bash -l
 ```
 sudo chmod 777 /src/uploads
 ```
+
+![twitter](https://github.com/josh-truong/twitter-clone/blob/main/demo.png)
