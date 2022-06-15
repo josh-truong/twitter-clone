@@ -1,2 +1,4 @@
 db/
 src/uploads/*
+
+!src/uploads/.gitkeep
