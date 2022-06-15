@@ -30,3 +30,9 @@ mysql -u root -ppasswd
 ```
 docker exec -it php-apache bash -l
 ```
+
+#### Issues
+- move_uploaded_files()
+```
+sudo chmod 777 /src/uploads
+```
