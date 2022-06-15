@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+   php-apache-env:
+      build:
+         context: .
+         dockerfile: Dockerfile
+         args:
+            PHP_VERSION: ${PHP_VERSION}
+      container_name: php-apache
+      depends_on:
+         - mysql
+      env_file:
+         - .env
+      links:
+         - mysql
+      ports:
+         - 80:80
+      restart: always
+      volumes:
+         - ./src/:/var/www/html/
+         - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+
+   mysql:
+      container_name: mysql
+      environment: 
+         MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+      env_file:
+         - .env
+      image: mysql:latest
+      ports:
+         - 3306:3306
+      restart: always
+      volumes:
+         - ./init:/docker-entrypoint-initdb.d
+         - db:/var/lib/mysql
+         - ./src/uploads/:/var/www/html/uploads
+     
+volumes:
+   db:
