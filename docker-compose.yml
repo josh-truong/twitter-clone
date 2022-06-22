@@ -19,7 +19,7 @@ services:
       volumes:
          - ./src/:/var/www/html/
          - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-         - ./src/uploads/:/var/www/html/uploads
+         - ./storage/uploads/:/var/www/html/uploads
 
    mysql:
       container_name: mysql

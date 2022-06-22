@@ -1,4 +1,4 @@
 db/
-src/uploads/*
+storage/uploads/*
 
 !src/uploads/.gitkeep
