@@ -34,7 +34,7 @@ docker exec -it php-apache bash -l
 #### Issues
 - move_uploaded_files()
 ```
-sudo chmod 777 /src/uploads
+sudo chmod 777 /storage/uploads
 ```
 
 ![twitter](https://github.com/josh-truong/twitter-clone/blob/main/demo.png)
